@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "../../axios";
 import { requests } from "../../request.ts";
 import { Movie } from "../../type.ts";
+import { ApiResponse } from "../../type.ts";
 
 export const useProps = () => {
     const [movie, setMovie] = useState<Movie>();
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(requests.fetchNetflixOriginals);
+            const request = await axios.get<ApiResponse>(requests.fetchNetflixOriginals);
 
             // ① 取得した映像データからランダムでmovieに格納
             setMovie(
