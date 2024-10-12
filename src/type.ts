@@ -5,3 +5,7 @@ export type Movie = {
     backdrop_path: string;
     overview: string;
   };
+
+export type ApiResponse = {
+    results: Movie[];
+}
