@@ -2,6 +2,7 @@ import { requests } from "./request";
 import { Row } from "./components/Row";
 import { Banner } from "./components/Banner";
 import { Header } from "./components/Header";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <Row title="Kids Movies" fetchUrl={requests.fetchKidsMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentMovies} />
+
+      <Analytics />
     </div>
   );
 }
